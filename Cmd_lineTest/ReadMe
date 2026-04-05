@@ -1,0 +1,22 @@
+# CMD Line
+Hãy tưởng tượng bạn đang làm remote điều khiển thiết bị nhúng (như Arduino, STM32). Người dùng gõ lệnh vào terminal, chương trình đọc lệnh đó và thực thi đúng chức năng.
+
+## Cách chương trình hoạt động:
+```
+User gõ: "led_on"
+          ↓
+     cmd_line_parser()  
+          ↓
+     Tìm thấy "led_on" trong bảng lệnh
+          ↓
+     Gọi hàm cmd_led_on()
+          ↓
+     [DEVICE]: Da bat den LED THANH CONG!
+```
+## Cấu trúc project
+cmd_line.h - định nghĩa các quy tắc chung mà tất cả các file khác phải tuân theo
+
+cmd_line.c - Nhận chuỗi người dùng gõ → tách lấy từ khóa → tìm trong bảng lệnh → gọi hàm tương ứng
+
+main.c - File kiểm thử
+
